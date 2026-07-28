@@ -9,18 +9,21 @@ export interface HeroProps {
 }
 
 /**
- * The site's introductory section, composed as one continuous canvas
- * rather than a grid of columns. Every layer spans the full section:
- * the void-colored background, the artist's presence (feathered into
- * the canvas, not boxed beside it), the brand watermark (blended
- * through the whole composition, not confined to a badge), and the
- * text (floating, unboxed, on top). Nothing here occupies its own
- * independent column — the layers overlap by design.
+ * The site's introductory section, composed for a Persian-primary,
+ * RTL-reading audience as one continuous canvas rather than a grid of
+ * columns. The reading flow moves brand → narrative → artist, right
+ * to left: the void-colored background, the artist's presence
+ * (feathered into the canvas on the left), the brand watermark
+ * (blended through the whole composition, not confined to a badge),
+ * and the text (floating, unboxed, toward the right). Nothing here
+ * occupies its own independent column — the layers overlap by design.
  */
 export function Hero({ className }: HeroProps) {
   return (
     <section
-      aria-label="Introduction"
+      dir="rtl"
+      lang="fa"
+      aria-label="معرفی"
       className={cn(
         "relative isolate min-h-[92vh] overflow-hidden bg-[#1D002E] lg:min-h-screen",
         className,
